@@ -1,0 +1,84 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<h1>🏢 Admin Dashboard</h1>
+<p>Monitor platform activity and manage users.</p>
+
+<div class="card">
+    <h2>📊 Platform Statistics</h2>
+
+    <div class="flex">
+        <div class="flex-2 card">
+            <h3>Total Users</h3>
+            <p>{{ stats.total_users }}</p>
+        </div>
+
+        <div class="flex-2 card">
+            <h3>Total Content</h3>
+            <p>{{ stats.total_content }}</p>
+        </div>
+
+        <div class="flex-2 card">
+            <h3>Total Reviews</h3>
+            <p>{{ stats.total_reviews }}</p>
+        </div>
+
+        <div class="flex-2 card">
+            <h3>High Risk Cases</h3>
+            <p>{{ stats.high_risk }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>👥 User Management</h2>
+
+    <table style="width:100%;">
+        <tr style="background:#eee;">
+            <th>Username</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+
+        {% for user in users %}
+        <tr>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+                {% if user.is_blocked %}
+                    <span class="badge high">Blocked</span>
+                {% else %}
+                    <span class="badge low">Active</span>
+                {% endif %}
+            </td>
+            <td>
+                <a href="/adminpanel/block/{{ user.id }}/" class="btn btn-danger">
+                    Block
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div class="card">
+    <h2>⚙ Admin Actions</h2>
+
+    <div class="flex">
+        <a href="/adminpanel/remove-inactive/" class="btn btn-warning">
+            Remove Inactive Users
+        </a>
+
+        <a href="/adminpanel/logs/" class="btn btn-primary">
+            View Logs
+        </a>
+
+        <a href="/adminpanel/model-update/" class="btn btn-success">
+            Update AI Model
+        </a>
+    </div>
+</div>
+
+{% endblock %}
