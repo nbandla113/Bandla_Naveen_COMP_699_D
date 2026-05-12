@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<h2>📄 Report Generated</h2>
+
+<div class="card">
+    <h3>📊 Summary Data</h3>
+
+    <table style="width:100%;">
+        {% for key, value in data.items %}
+        <tr>
+            <td><strong>{{ key|title }}</strong></td>
+            <td>{{ value }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div class="card">
+    <h3>📥 Export File</h3>
+
+    <p>Your report has been generated successfully.</p>
+
+    {% if file %}
+        <p>
+            <strong>File Location:</strong> /media/{{ file }}
+        </p>
+    {% endif %}
+</div>
+
+<div class="card">
+    <div class="flex">
+        <a href="/dashboard/" class="btn btn-primary">Back to Dashboard</a>
+        <a href="/reports/summary/" class="btn btn-success">Generate Again</a>
+    </div>
+</div>
+
+{% endblock %}
