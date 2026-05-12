@@ -1,0 +1,2333 @@
+LOGGING = {
+    'handlers': {
+        'file': {
+            'filename': BASE_DIR / 'logs/system.log',
+        },
+    },
+}Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 3776
+"GET /static/css/forms.css HTTP/1.1" 200 777
+"GET /static/css/dashboard.css HTTP/1.1" 200 689
+"GET /static/css/styles.css HTTP/1.1" 200 1713
+"GET /content/text/ HTTP/1.1" 302 0
+"GET /?next=/content/text/ HTTP/1.1" 200 3776
+"GET /register/ HTTP/1.1" 200 4247
+"POST /register/ HTTP/1.1" 200 4313
+"GET / HTTP/1.1" 200 3776
+"POST / HTTP/1.1" 200 3776
+"POST / HTTP/1.1" 200 3776
+C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 4312
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 4000
+"POST / HTTP/1.1" 200 4130
+"GET /register/ HTTP/1.1" 200 4307
+"POST /register/ HTTP/1.1" 302 0
+"GET /login/ HTTP/1.1" 200 4127
+"POST /login/ HTTP/1.1" 302 0
+"GET /dashboard/ HTTP/1.1" 200 5241
+"GET /content/image/ HTTP/1.1" 200 3599
+Internal Server Error: /content/image/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: content_content
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\content\views.py", line 34, in image_review_view
+    content = process_image_review(request.user, request.FILES['image'])
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\content\services.py", line 34, in process_image_review
+    content = Content.objects.create(
+        user=user,
+        content_type='image',
+        image=image
+    )
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 909, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 1071, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 1112, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1823, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: content_content
+"POST /content/image/ HTTP/1.1" 500 173687
+"GET /content/image/ HTTP/1.1" 200 3599
+"GET /dashboard/ HTTP/1.1" 200 5241
+"GET /content/text/ HTTP/1.1" 200 3615
+Internal Server Error: /content/text/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: content_content
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\content\views.py", line 21, in text_review_view
+    content = process_text_review(request.user, form.cleaned_data['text'])
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\content\services.py", line 10, in process_text_review
+    content = Content.objects.create(
+        user=user,
+        content_type='text',
+        text=text
+    )
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 909, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 1071, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 1112, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1823, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: content_content
+"POST /content/text/ HTTP/1.1" 500 172976
+"GET /content/text/ HTTP/1.1" 200 3615
+Internal Server Error: /content/history/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: content_content
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\content\views.py", line 72, in history_view
+    return render(request, 'content/history.html', {'history': history})
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\defaulttags.py", line 198, in render
+    len_values = len(values)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: content_content
+"GET /content/history/ HTTP/1.1" 500 209386
+Internal Server Error: /shared/my-spaces/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: shared_space_sharedspacemember
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\shared_space\views.py", line 71, in user_spaces_view
+    return render(request, 'shared/group_activity.html', {'spaces': spaces})
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\template\defaulttags.py", line 198, in render
+    len_values = len(values)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: shared_space_sharedspacemember
+"GET /shared/my-spaces/ HTTP/1.1" 500 208014
+Internal Server Error: /reports/summary/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: content_content
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\reports\views.py", line 11, in user_summary_view
+    summary = generate_user_summary(request.user)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\reports\services.py", line 9, in generate_user_summary
+    total = contents.count()
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 620, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\sql\query.py", line 629, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\sql\query.py", line 615, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: content_content
+"GET /reports/summary/ HTTP/1.1" 500 143744
+"GET /dashboard/ HTTP/1.1" 200 5241
+"GET /content/text/ HTTP/1.1" 200 3615
+"GET /dashboard/ HTTP/1.1" 200 6200
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 3615
+"GET /dashboard/ HTTP/1.1" 200 6200
+"GET /dashboard/ HTTP/1.1" 200 6200
+"GET /dashboard/ HTTP/1.1" 200 6200
+"GET /dashboard/ HTTP/1.1" 200 6200
+"GET /dashboard/ HTTP/1.1" 200 6200
+"GET /dashboard/ HTTP/1.1" 200 6200
+"GET /dashboard/ HTTP/1.1" 200 6200
+"GET /dashboard/ HTTP/1.1" 200 6200
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /dashboard/ HTTP/1.1" 200 6200
+"GET /logout/ HTTP/1.1" 302 0
+"GET /login/ HTTP/1.1" 200 4196
+"POST /login/ HTTP/1.1" 302 0
+"GET /dashboard/ HTTP/1.1" 200 6200
+"GET /dashboard/ HTTP/1.1" 200 5022
+"GET /dashboard/ HTTP/1.1" 200 5022
+"GET /content/text/ HTTP/1.1" 200 2437
+Internal Server Error: /content/text/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: content_content
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\content\views.py", line 21, in text_review_view
+    content = process_text_review(request.user, form.cleaned_data['text'])
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\content\services.py", line 10, in process_text_review
+    content = Content.objects.create(
+        user=user,
+        content_type='text',
+        text=text
+    )
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 909, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 1071, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 1112, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1823, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: content_content
+"POST /content/text/ HTTP/1.1" 500 172910
+Watching for file changes with StatReloader
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/1/ HTTP/1.1" 200 2468
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 200 3481
+"GET /content/text/ HTTP/1.1" 200 2437
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/2/ HTTP/1.1" 200 2611
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2437
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/3/ HTTP/1.1" 200 2468
+C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\ai_engine\nlp_model.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /content/result/3/ HTTP/1.1" 200 2468
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2437
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/4/ HTTP/1.1" 200 2493
+C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\ai_engine\nlp_model.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /content/result/4/ HTTP/1.1" 200 2493
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2437
+Internal Server Error: /content/text/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\content\views.py", line 21, in text_review_view
+    content = process_text_review(request.user, form.cleaned_data['text'])
+  File "C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\content\services.py", line 17, in process_text_review
+    nlp_score, reasons = check_harmful_text(text)
+    ^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+"POST /content/text/ HTTP/1.1" 500 80402
+C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\content\services.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/6/ HTTP/1.1" 200 2493
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/result/6/ HTTP/1.1" 200 2493
+"GET /content/text/ HTTP/1.1" 200 2437
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/7/ HTTP/1.1" 200 2493
+C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\ai_engine\risk_engine.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /content/result/7/ HTTP/1.1" 200 2493
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/result/7/ HTTP/1.1" 200 2493
+"GET /content/text/ HTTP/1.1" 200 2437
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/8/ HTTP/1.1" 200 2499
+C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\ai_engine\nlp_model.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\content\services.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /content/result/8/ HTTP/1.1" 200 2499
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /content/result/8/ HTTP/1.1" 200 2499
+"GET /content/text/ HTTP/1.1" 200 2437
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/9/ HTTP/1.1" 200 2499
+C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\content\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\content\services.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /content/result/9/ HTTP/1.1" 200 2499
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2437
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/10/ HTTP/1.1" 200 2499
+C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\ai_engine\suggestion_engine.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /content/result/10/ HTTP/1.1" 200 3457
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\ai_engine\suggestion_engine.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /content/result/10/ HTTP/1.1" 200 3457
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /content/result/10/ HTTP/1.1" 200 3457
+"GET /content/result/10/ HTTP/1.1" 200 3457
+C:\Users\hello\Desktop\SPRING 2026_Pitts professional\Naveen Bandla\bandlaguard\apps\content\services.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /content/result/10/ HTTP/1.1" 200 3457
+"GET /content/result/10/ HTTP/1.1" 200 3457
+"GET /content/text/ HTTP/1.1" 200 2437
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/11/ HTTP/1.1" 200 3794
+"GET /content/text/ HTTP/1.1" 200 2437
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/12/ HTTP/1.1" 200 3765
+"GET /content/text/ HTTP/1.1" 200 2437
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/13/ HTTP/1.1" 200 3945
+"GET /dashboard/ HTTP/1.1" 200 5022
+"GET /content/history/ HTTP/1.1" 200 5869
+"GET /content/result/13/ HTTP/1.1" 200 3945
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2822
+"GET /content/text/ HTTP/1.1" 302 0
+"GET /?next=/content/text/ HTTP/1.1" 200 2822
+C:\Users\hello\Desktop\OOD\bandlaguard\bandlaguard\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\bandlaguard\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\bandlaguard\wsgi.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\accounts\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\accounts\services.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\accounts\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\accounts\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\forms.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\services.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\llm_model.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\nlp_model.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\cnn_model.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\risk_engine.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\suggestion_engine.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\shared_space\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\shared_space\forms.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\shared_space\services.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\shared_space\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\shared_space\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\shared_space\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\reports\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\reports\services.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\reports\exporters.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\reports\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\reports\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\adminpanel\decorators.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\adminpanel\services.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\adminpanel\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\adminpanel\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\manage.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 3776
+"GET / HTTP/1.1" 200 4469
+"GET / HTTP/1.1" 200 4255
+"GET / HTTP/1.1" 200 2223
+"GET / HTTP/1.1" 200 4255
+"GET / HTTP/1.1" 200 4211
+C:\Users\hello\Desktop\OOD\bandlaguard\bandlaguard\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 4211
+"GET / HTTP/1.1" 200 2187
+"GET /static/css/styles.css HTTP/1.1" 200 1193
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 3524
+C:\Users\hello\Desktop\OOD\bandlaguard\bandlaguard\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2187
+"GET /register/ HTTP/1.1" 200 2616
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /register/ HTTP/1.1" 200 2728
+"GET /register/ HTTP/1.1" 200 2907
+"POST /register/ HTTP/1.1" 200 3428
+"GET / HTTP/1.1" 200 2089
+"POST / HTTP/1.1" 200 2169
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2089
+"GET /static/css/forms.css HTTP/1.1" 200 946
+"GET /static/css/dashboard.css HTTP/1.1" 200 568
+"GET /static/css/styles.css HTTP/1.1" 200 904
+"GET /register/ HTTP/1.1" 200 2907
+"POST /register/ HTTP/1.1" 200 3430
+"POST /register/ HTTP/1.1" 200 3319
+"POST /register/ HTTP/1.1" 200 3256
+"POST /register/ HTTP/1.1" 200 3256
+"GET /content/text/ HTTP/1.1" 302 0
+Not Found: /login/
+"GET /login/?next=/content/text/ HTTP/1.1" 404 3656
+"GET /content/draft/ HTTP/1.1" 302 0
+Not Found: /login/
+"GET /login/?next=/content/draft/ HTTP/1.1" 404 3657
+"GET /content/history/ HTTP/1.1" 302 0
+Not Found: /login/
+"GET /login/?next=/content/history/ HTTP/1.1" 404 3659
+"POST /register/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 2089
+"POST / HTTP/1.1" 302 0
+"GET /dashboard/ HTTP/1.1" 200 3652
+Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        template_name,
+        ^^^^^^^^^^^^^^
+        skip=history,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\accounts\views.py", line 46, in dashboard_view
+    return render(request, "dashboard/dashboard.html")
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\backends\django.py", line 63, in render
+    reraise(exc, self.backend)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\backends\django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+"GET /dashboard/ HTTP/1.1" 500 134876
+"GET /dashboard/ HTTP/1.1" 200 3652
+"GET /content/text/ HTTP/1.1" 200 2026
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/1/ HTTP/1.1" 200 2127
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /dashboard/ HTTP/1.1" 200 3652
+"GET /dashboard/ HTTP/1.1" 200 4001
+Watching for file changes with StatReloader
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 2089
+"POST / HTTP/1.1" 302 0
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /content/image/ HTTP/1.1" 200 2010
+"GET /content/draft/ HTTP/1.1" 200 2138
+"GET /content/history/ HTTP/1.1" 200 2159
+Internal Server Error: /shared/my-spaces/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: shared_space_sharedspacemember
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\shared_space\views.py", line 71, in user_spaces_view
+    return render(request, 'shared/group_activity.html', {'spaces': spaces})
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\defaulttags.py", line 198, in render
+    len_values = len(values)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: shared_space_sharedspacemember
+"GET /shared/my-spaces/ HTTP/1.1" 500 206079
+Internal Server Error: /reports/summary/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: reports_report
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\reports\views.py", line 13, in user_summary_view
+    report = save_report("summary", summary)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\reports\services.py", line 43, in save_report
+    report = Report.objects.create(
+        report_type=report_type,
+        data_snapshot=str(data)
+    )
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 909, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 1071, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 1112, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1823, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: reports_report
+"GET /reports/summary/ HTTP/1.1" 500 169946
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /content/image/ HTTP/1.1" 200 2010
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /content/history/ HTTP/1.1" 200 2159
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+Watching for file changes with StatReloader
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 2089
+"POST / HTTP/1.1" 302 0
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /content/image/ HTTP/1.1" 200 2010
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /content/draft/ HTTP/1.1" 200 2138
+"GET /content/history/ HTTP/1.1" 200 2159
+Internal Server Error: /shared/my-spaces/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: shared_space_sharedspacemember
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\shared_space\views.py", line 71, in user_spaces_view
+    return render(request, 'shared/group_activity.html', {'spaces': spaces})
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\defaulttags.py", line 198, in render
+    len_values = len(values)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: shared_space_sharedspacemember
+"GET /shared/my-spaces/ HTTP/1.1" 500 206079
+Internal Server Error: /shared/my-spaces/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: shared_space_sharedspacemember
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\shared_space\views.py", line 71, in user_spaces_view
+    return render(request, 'shared/group_activity.html', {'spaces': spaces})
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\defaulttags.py", line 198, in render
+    len_values = len(values)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: shared_space_sharedspacemember
+"GET /shared/my-spaces/ HTTP/1.1" 500 206079
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /dashboard/ HTTP/1.1" 200 4001
+Watching for file changes with StatReloader
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 2089
+"POST / HTTP/1.1" 302 0
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /content/text/ HTTP/1.1" 200 2026
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/2/ HTTP/1.1" 200 2057
+"GET /content/image/ HTTP/1.1" 200 2010
+Internal Server Error: /content/image/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\views.py", line 34, in image_review_view
+    content = process_image_review(request.user, request.FILES['image'])
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\services.py", line 40, in process_image_review
+    image_score, reasons = analyze_image_cnn(image.path)
+                                             ^^^^^^^^^^
+AttributeError: 'InMemoryUploadedFile' object has no attribute 'path'
+"POST /content/image/ HTTP/1.1" 500 80482
+"GET /content/draft/ HTTP/1.1" 200 2138
+"POST /content/draft/ HTTP/1.1" 302 0
+"GET /content/result/4/ HTTP/1.1" 200 2057
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\nlp_model.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\risk_engine.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\llm_model.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\cnn_model.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /content/image/ HTTP/1.1" 200 2010
+Internal Server Error: /content/image/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\views.py", line 34, in image_review_view
+    content = process_image_review(request.user, request.FILES['image'])
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\services.py", line 40, in process_image_review
+    image_score, reasons = analyze_image_cnn(image.path)
+                                             ^^^^^^^^^^
+AttributeError: 'InMemoryUploadedFile' object has no attribute 'path'
+"POST /content/image/ HTTP/1.1" 500 80458
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\services.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\services.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /content/image/ HTTP/1.1" 302 0
+"GET /content/result/6/ HTTP/1.1" 200 2103
+"GET /content/image/ HTTP/1.1" 200 2010
+"POST /content/image/ HTTP/1.1" 302 0
+"GET /content/result/7/ HTTP/1.1" 200 2103
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2089
+"GET /static/css/styles.css HTTP/1.1" 200 953
+"GET /static/css/dashboard.css HTTP/1.1" 200 1817
+"GET /static/css/forms.css HTTP/1.1" 200 1415
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 3651
+"GET /register/ HTTP/1.1" 200 2907
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"POST /register/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 2089
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"POST / HTTP/1.1" 302 0
+"GET /dashboard/ HTTP/1.1" 200 4004
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+Internal Server Error: /content/text/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\views.py", line 21, in text_review_view
+    content = process_text_review(request.user, form.cleaned_data['text'])
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\services.py", line 31, in process_text_review
+    suggestions = generate_suggestions(reasons)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\suggestion_engine.py", line 8, in generate_suggestions
+    text = text.lower()
+           ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'lower'
+"POST /content/text/ HTTP/1.1" 500 84134
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2089
+"GET /static/css/styles.css HTTP/1.1" 200 953
+"GET /static/css/forms.css HTTP/1.1" 200 1415
+"GET /static/css/dashboard.css HTTP/1.1" 200 1817
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 3651
+"POST / HTTP/1.1" 302 0
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+Internal Server Error: /content/text/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\views.py", line 21, in text_review_view
+    content = process_text_review(request.user, form.cleaned_data['text'])
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\services.py", line 31, in process_text_review
+    suggestions = generate_suggestions(reasons)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\suggestion_engine.py", line 8, in generate_suggestions
+    text = text.lower()
+           ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'lower'
+"POST /content/text/ HTTP/1.1" 500 84337
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\suggestion_engine.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/10/ HTTP/1.1" 200 2057
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/history/ HTTP/1.1" 200 4334
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/clear-history/ HTTP/1.1" 302 0
+"GET /content/history/ HTTP/1.1" 200 1888
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/11/ HTTP/1.1" 200 2152
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/12/ HTTP/1.1" 200 2057
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/13/ HTTP/1.1" 200 2057
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/14/ HTTP/1.1" 200 2057
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/15/ HTTP/1.1" 200 2057
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /content/history/ HTTP/1.1" 200 3253
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/draft/ HTTP/1.1" 200 2138
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/image/ HTTP/1.1" 200 2010
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /profile/ HTTP/1.1" 200 2312
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"POST /profile/ HTTP/1.1" 302 0
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /shared/join/ HTTP/1.1" 200 1988
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+Internal Server Error: /reports/summary/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: reports_report
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\reports\views.py", line 13, in user_summary_view
+    report = save_report("summary", summary)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\reports\services.py", line 43, in save_report
+    report = Report.objects.create(
+        report_type=report_type,
+        data_snapshot=str(data)
+    )
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 909, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 1071, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 1112, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1823, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: reports_report
+"GET /reports/summary/ HTTP/1.1" 500 169940
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/16/ HTTP/1.1" 200 2153
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/17/ HTTP/1.1" 200 2057
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/image/ HTTP/1.1" 200 2010
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"POST /content/image/ HTTP/1.1" 302 0
+"GET /content/result/18/ HTTP/1.1" 200 2103
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/image/ HTTP/1.1" 200 2010
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /content/draft/ HTTP/1.1" 200 2138
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+Internal Server Error: /shared/my-spaces/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: shared_space_sharedspacemember
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\shared_space\views.py", line 71, in user_spaces_view
+    return render(request, 'shared/group_activity.html', {'spaces': spaces})
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\template\defaulttags.py", line 198, in render
+    len_values = len(values)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: shared_space_sharedspacemember
+"GET /shared/my-spaces/ HTTP/1.1" 500 206073
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\llm_model.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/19/ HTTP/1.1" 200 2147
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/image/ HTTP/1.1" 200 2010
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/history/ HTTP/1.1" 200 4343
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/result/19/ HTTP/1.1" 200 2147
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /shared/create/ HTTP/1.1" 200 2132
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /profile/ HTTP/1.1" 200 2312
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/20/ HTTP/1.1" 200 2307
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/21/ HTTP/1.1" 200 2097
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/22/ HTTP/1.1" 200 2102
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /content/result/22/ HTTP/1.1" 200 2102
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/23/ HTTP/1.1" 200 2145
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+Internal Server Error: /reports/summary/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: reports_report
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\reports\views.py", line 13, in user_summary_view
+    report = save_report("summary", summary)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\reports\services.py", line 43, in save_report
+    report = Report.objects.create(
+        report_type=report_type,
+        data_snapshot=str(data)
+    )
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 909, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 1071, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\base.py", line 1112, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1823, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: reports_report
+"GET /reports/summary/ HTTP/1.1" 500 169961
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\llm_model.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\llm_model.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/24/ HTTP/1.1" 200 2399
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/25/ HTTP/1.1" 200 2102
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\nlp_model.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /content/image/ HTTP/1.1" 200 2010
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+Internal Server Error: /content/image/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\views.py", line 34, in image_review_view
+    content = process_image_review(request.user, request.FILES['image'])
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\services.py", line 60, in process_image_review
+    image_score, reasons = analyze_image_cnn(file_path)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\cnn_model.py", line 17, in analyze_image_cnn
+    results = model(image_path)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\engine\model.py", line 177, in __call__
+    return self.predict(source, stream, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\engine\model.py", line 537, in predict
+    return self.predictor.predict_cli(source=source) if is_cli else self.predictor(source=source, stream=stream)
+                                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\engine\predictor.py", line 226, in __call__
+    return list(self.stream_inference(source, model, *args, **kwargs))  # merge list of Results into one
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\torch\utils\_contextlib.py", line 40, in generator_context
+    response = gen.send(None)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\engine\predictor.py", line 300, in stream_inference
+    self.setup_source(source if source is not None else self.args.source)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\engine\predictor.py", line 257, in setup_source
+    self.dataset = load_inference_source(
+                   ~~~~~~~~~~~~~~~~~~~~~^
+        source=source,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        channels=getattr(self.model, "channels", 3),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\data\build.py", line 433, in load_inference_source
+    dataset = LoadImagesAndVideos(source, batch=batch, vid_stride=vid_stride, channels=channels)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\data\loaders.py", line 393, in __init__
+    raise FileNotFoundError(f"No images or videos found in {p}. {FORMATS_HELP_MSG}")
+FileNotFoundError: No images or videos found in C:\Users\hello\Desktop\OOD\bandlaguard\media\download_auaAMcu.jfif. Supported formats are:
+images: {'bmp', 'jp2', 'webp', 'tif', 'dng', 'avif', 'heif', 'jpeg', 'tiff', 'jpg', 'png', 'jpeg2000', 'heic', 'mpo'}
+videos: {'m4v', 'ts', 'webm', 'mpeg', 'mpg', 'mov', 'mkv', 'wmv', 'asf', 'avi', 'gif', 'mp4'}
+"POST /content/image/ HTTP/1.1" 500 136071
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\suggestion_engine.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /content/image/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\views.py", line 34, in image_review_view
+    content = process_image_review(request.user, request.FILES['image'])
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\services.py", line 60, in process_image_review
+    image_score, reasons = analyze_image_cnn(file_path)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\cnn_model.py", line 17, in analyze_image_cnn
+    """
+    
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\engine\model.py", line 177, in __call__
+    return self.predict(source, stream, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\engine\model.py", line 537, in predict
+    return self.predictor.predict_cli(source=source) if is_cli else self.predictor(source=source, stream=stream)
+                                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\engine\predictor.py", line 226, in __call__
+    return list(self.stream_inference(source, model, *args, **kwargs))  # merge list of Results into one
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\torch\utils\_contextlib.py", line 40, in generator_context
+    response = gen.send(None)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\engine\predictor.py", line 300, in stream_inference
+    self.setup_source(source if source is not None else self.args.source)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\engine\predictor.py", line 257, in setup_source
+    self.dataset = load_inference_source(
+                   ~~~~~~~~~~~~~~~~~~~~~^
+        source=source,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        channels=getattr(self.model, "channels", 3),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\data\build.py", line 433, in load_inference_source
+    dataset = LoadImagesAndVideos(source, batch=batch, vid_stride=vid_stride, channels=channels)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\data\loaders.py", line 393, in __init__
+    raise FileNotFoundError(f"No images or videos found in {p}. {FORMATS_HELP_MSG}")
+FileNotFoundError: No images or videos found in C:\Users\hello\Desktop\OOD\bandlaguard\media\download_7v61oBP.jfif. Supported formats are:
+images: {'mpo', 'tiff', 'jpeg2000', 'dng', 'avif', 'heic', 'jpeg', 'webp', 'bmp', 'jp2', 'tif', 'jpg', 'png', 'heif'}
+videos: {'webm', 'mpeg', 'm4v', 'mkv', 'avi', 'asf', 'wmv', 'mpg', 'mp4', 'ts', 'gif', 'mov'}
+"POST /content/image/ HTTP/1.1" 500 136007
+Internal Server Error: /content/image/
+Traceback (most recent call last):
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\views.py", line 34, in image_review_view
+    content = process_image_review(request.user, request.FILES['image'])
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\content\services.py", line 60, in process_image_review
+    image_score, reasons = analyze_image_cnn(file_path)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\apps\ai_engine\cnn_model.py", line 17, in analyze_image_cnn
+    """
+    
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\engine\model.py", line 177, in __call__
+    return self.predict(source, stream, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\engine\model.py", line 537, in predict
+    return self.predictor.predict_cli(source=source) if is_cli else self.predictor(source=source, stream=stream)
+                                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\engine\predictor.py", line 226, in __call__
+    return list(self.stream_inference(source, model, *args, **kwargs))  # merge list of Results into one
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\torch\utils\_contextlib.py", line 40, in generator_context
+    response = gen.send(None)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\engine\predictor.py", line 300, in stream_inference
+    self.setup_source(source if source is not None else self.args.source)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\engine\predictor.py", line 257, in setup_source
+    self.dataset = load_inference_source(
+                   ~~~~~~~~~~~~~~~~~~~~~^
+        source=source,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        channels=getattr(self.model, "channels", 3),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\data\build.py", line 433, in load_inference_source
+    dataset = LoadImagesAndVideos(source, batch=batch, vid_stride=vid_stride, channels=channels)
+  File "C:\Users\hello\Desktop\OOD\bandlaguard\venv\Lib\site-packages\ultralytics\data\loaders.py", line 393, in __init__
+    raise FileNotFoundError(f"No images or videos found in {p}. {FORMATS_HELP_MSG}")
+FileNotFoundError: No images or videos found in C:\Users\hello\Desktop\OOD\bandlaguard\media\download_NuQ27ZM.jfif. Supported formats are:
+images: {'mpo', 'tiff', 'jpeg2000', 'dng', 'avif', 'heic', 'jpeg', 'webp', 'bmp', 'jp2', 'tif', 'jpg', 'png', 'heif'}
+videos: {'webm', 'mpeg', 'm4v', 'mkv', 'avi', 'asf', 'wmv', 'mpg', 'mp4', 'ts', 'gif', 'mov'}
+"POST /content/image/ HTTP/1.1" 500 136007
+C:\Users\hello\Desktop\OOD\bandlaguard\apps\adminpanel\services.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /content/image/ HTTP/1.1" 302 0
+"GET /content/result/29/ HTTP/1.1" 200 2103
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /dashboard/ HTTP/1.1" 200 4001
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /content/image/ HTTP/1.1" 200 2010
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /content/draft/ HTTP/1.1" 200 2138
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2089
+"GET /static/css/styles.css HTTP/1.1" 200 953
+"GET /static/css/dashboard.css HTTP/1.1" 200 1817
+"GET /static/css/forms.css HTTP/1.1" 200 1415
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 3651
+"POST / HTTP/1.1" 200 2169
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET / HTTP/1.1" 200 2089
+"GET /static/css/forms.css HTTP/1.1" 200 1415
+"GET /static/css/styles.css HTTP/1.1" 200 953
+"GET /static/css/dashboard.css HTTP/1.1" 200 1817
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 3651
+"GET /content/image/ HTTP/1.1" 302 0
+Not Found: /login/
+"GET /login/?next=/content/image/ HTTP/1.1" 404 3657
+"GET /content/text/ HTTP/1.1" 302 0
+Not Found: /login/
+"GET /login/?next=/content/text/ HTTP/1.1" 404 3656
+"GET /dashboard/ HTTP/1.1" 302 0
+Not Found: /login/
+"GET /login/?next=/dashboard/ HTTP/1.1" 404 3653
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 2089
+"GET /static/css/styles.css HTTP/1.1" 200 953
+"GET /static/css/dashboard.css HTTP/1.1" 200 1817
+"GET /static/css/forms.css HTTP/1.1" 200 1415
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 3651
+"GET / HTTP/1.1" 200 2089
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /dashboard/ HTTP/1.1" 302 0
+Not Found: /login/
+"GET /login/?next=/dashboard/ HTTP/1.1" 404 3653
+"GET /register/ HTTP/1.1" 200 2907
+"POST /register/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 2089
+"POST / HTTP/1.1" 302 0
+"GET /dashboard/ HTTP/1.1" 200 4005
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/30/ HTTP/1.1" 200 2057
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /content/text/ HTTP/1.1" 200 2026
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/31/ HTTP/1.1" 200 2057
+"GET /content/text/ HTTP/1.1" 200 2026
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/32/ HTTP/1.1" 200 2058
+"GET /content/text/ HTTP/1.1" 200 2026
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/33/ HTTP/1.1" 200 2211
+"GET /content/text/ HTTP/1.1" 200 2026
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/34/ HTTP/1.1" 200 2229
+"GET /content/history/ HTTP/1.1" 200 3253
+"GET /content/result/34/ HTTP/1.1" 200 2229
+"GET /content/history/ HTTP/1.1" 200 3253
+"GET /content/result/33/ HTTP/1.1" 200 2211
+"GET /content/text/ HTTP/1.1" 200 2026
+"POST /content/text/ HTTP/1.1" 302 0
+"GET /content/result/35/ HTTP/1.1" 200 2211
+"GET /content/text/ HTTP/1.1" 200 2026
+"GET /content/image/ HTTP/1.1" 200 2010
+"GET /content/draft/ HTTP/1.1" 200 2138
+"POST /content/draft/ HTTP/1.1" 302 0
+"GET /content/result/36/ HTTP/1.1" 200 2477
+"GET /content/image/ HTTP/1.1" 200 2010
+"GET /static/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/css/forms.css HTTP/1.1" 304 0
+"GET /content/draft/ HTTP/1.1" 200 2138
+"GET /content/history/ HTTP/1.1" 200 3800
+"GET /content/image/ HTTP/1.1" 200 2010
+"POST /content/image/ HTTP/1.1" 302 0
+"GET /content/result/37/ HTTP/1.1" 200 2103
+"GET /dashboard/ HTTP/1.1" 200 4005
+"GET /profile/ HTTP/1.1" 200 2324
+"GET /dashboard/ HTTP/1.1" 200 4005
