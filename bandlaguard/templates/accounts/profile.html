@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="card" style="max-width:600px; margin:auto;">
+    <h2 class="text-center">My Profile</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Username</label>
+        {{ form.username }}
+
+        <label>Email</label>
+        {{ form.email }}
+
+        <br>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;">
+            Update Profile
+        </button>
+    </form>
+
+    <br>
+
+    <div class="text-center">
+        <a href="/dashboard/" class="btn btn-success">Back to Dashboard</a>
+    </div>
+</div>
+
+{% endblock %}
