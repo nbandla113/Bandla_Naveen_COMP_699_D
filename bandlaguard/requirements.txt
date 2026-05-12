@@ -1,0 +1,5 @@
+Django==5.0.6
+pillow==12.2.0
+numpy
+scikit-learn
+opencv-python
