@@ -1,0 +1,91 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="dashboard-container">
+
+    <div class="dashboard-header">
+        <h1>Welcome, {{ request.user.username }} 👋</h1>
+        <p>Review your content before sharing and ensure safe communication.</p>
+    </div>
+
+    <!-- QUICK ACTIONS -->
+    <div class="card">
+        <h2>Quick Actions</h2>
+
+        <div class="flex">
+            <div class="flex-2">
+                <a href="/content/text/" class="btn btn-primary">📝 Review Text</a>
+            </div>
+
+            <div class="flex-2">
+                <a href="/content/image/" class="btn btn-success">🖼 Upload Image</a>
+            </div>
+
+            <div class="flex-2">
+                <a href="/content/draft/" class="btn btn-warning">📄 Review Draft</a>
+            </div>
+
+            <div class="flex-2">
+                <a href="/content/history/" class="btn btn-primary">📜 View History</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- USER FEATURES -->
+    <div class="card">
+        <h2>User Features</h2>
+
+        <div class="flex">
+            <div class="flex-2">
+                <a href="/shared/create/" class="btn btn-success">👥 Create Group</a>
+            </div>
+
+            <div class="flex-2">
+                <a href="/shared/join/" class="btn btn-warning">➕ Join Group</a>
+            </div>
+
+            <div class="flex-2">
+                <a href="/shared/my-spaces/" class="btn btn-primary">📊 My Groups</a>
+            </div>
+
+            <div class="flex-2">
+                <a href="/reports/summary/" class="btn btn-success">📄 Export Summary</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ACCOUNT SETTINGS -->
+    <div class="card">
+        <h2>Account Settings</h2>
+
+        <div class="flex">
+            <div class="flex-2">
+                <a href="/profile/" class="btn btn-primary">👤 Edit Profile</a>
+            </div>
+
+            <div class="flex-2">
+                <a href="/logout/" class="btn btn-danger">🚪 Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SAFETY INFO -->
+    <div class="card">
+        <h2>About BandlaGuard</h2>
+
+        <p>
+            BandlaGuard is an AI-powered platform designed to help users analyze and improve
+            their content before sharing it online. The system uses text analysis, NLP rules,
+            and image processing to detect harmful or risky content.
+        </p>
+
+        <p>
+            You will receive a safety score along with suggestions to improve your content.
+            This helps create a safer and more responsible online environment.
+        </p>
+    </div>
+
+</div>
+
+{% endblock %}
