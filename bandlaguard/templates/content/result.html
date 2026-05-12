@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="card" style="max-width:800px; margin:auto;">
+    <h2>📊 Safety Analysis Result</h2>
+
+    <p><strong>Risk Level:</strong>
+        <span class="badge {{ result.risk_level }}">
+            {{ result.risk_level|title }}
+        </span>
+    </p>
+
+    <p><strong>Score:</strong> {{ result.score }}</p>
+
+    <hr>
+
+    <h3>⚠ Reasons</h3>
+    <pre>{{ result.reasons }}</pre>
+
+    <h3>💡 Suggestions</h3>
+    <pre>{{ result.suggestions }}</pre>
+
+    <hr>
+
+    <div class="flex">
+        <a href="/content/text/" class="btn btn-primary">New Review</a>
+        <a href="/content/history/" class="btn btn-success">View History</a>
+        <a href="/dashboard/" class="btn btn-warning">Dashboard</a>
+    </div>
+</div>
+
+{% endblock %}

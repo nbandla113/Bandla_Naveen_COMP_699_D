@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="card" style="max-width:700px; margin:auto;">
+    <h2>📝 Text Safety Review</h2>
+    <p>Enter your message to check for harmful or risky content.</p>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <textarea name="text" class="form-control" rows="6" placeholder="Type your message..." required></textarea>
+
+        <br>
+
+        <button type="submit" class="btn btn-primary">Analyze Text</button>
+        <a href="/dashboard/" class="btn btn-success">Back</a>
+    </form>
+</div>
+
+{% endblock %}

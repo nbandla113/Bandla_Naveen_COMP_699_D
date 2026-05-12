@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<h2>📜 Review History</h2>
+
+<div class="card">
+    <table style="width:100%; border-collapse: collapse;">
+        <tr style="background:#eee;">
+            <th>ID</th>
+            <th>Type</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+
+        {% for item in history %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.content_type }}</td>
+            <td>{{ item.created_at }}</td>
+            <td>{{ item.status }}</td>
+            <td>
+                <a href="/content/result/{{ item.id }}/" class="btn btn-primary">View</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+
+    <a href="/content/clear-history/" class="btn btn-danger">Clear History</a>
+    <a href="/dashboard/" class="btn btn-success">Back</a>
+</div>
+
+{% endblock %}

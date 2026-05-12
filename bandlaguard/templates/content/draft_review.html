@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="card" style="max-width:700px; margin:auto;">
+    <h2>📄 Draft Post Review</h2>
+    <p>Analyze both text and image together before posting.</p>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label>Text</label>
+        <textarea name="text" class="form-control" rows="5"></textarea>
+
+        <label>Image (optional)</label>
+        <input type="file" name="image" class="form-control">
+
+        <br>
+
+        <button type="submit" class="btn btn-warning">Analyze Draft</button>
+        <a href="/dashboard/" class="btn btn-primary">Back</a>
+    </form>
+</div>
+
+{% endblock %}
