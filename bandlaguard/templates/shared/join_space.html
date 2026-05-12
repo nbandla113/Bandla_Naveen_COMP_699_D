@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="card" style="max-width:500px; margin:auto;">
+    <h2>➕ Join Shared Space</h2>
+    <p>Enter the Space ID to join a group.</p>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Space ID</label>
+        {{ form.space_id }}
+
+        <br>
+
+        <button type="submit" class="btn btn-warning">Join Space</button>
+        <a href="/dashboard/" class="btn btn-primary">Back</a>
+    </form>
+</div>
+
+{% endblock %}

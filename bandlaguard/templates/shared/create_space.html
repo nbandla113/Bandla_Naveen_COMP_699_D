@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="card" style="max-width:600px; margin:auto;">
+    <h2>👥 Create Shared Safety Space</h2>
+    <p>Create a group to apply shared safety rules.</p>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Space Name</label>
+        {{ form.name }}
+
+        <label>Safety Rules</label>
+        {{ form.rules }}
+
+        <br>
+
+        <button type="submit" class="btn btn-success">Create Space</button>
+        <a href="/dashboard/" class="btn btn-primary">Back</a>
+    </form>
+</div>
+
+{% endblock %}

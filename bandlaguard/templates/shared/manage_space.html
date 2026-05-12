@@ -1,0 +1,53 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<h2>⚙ Manage Space: {{ space.name }}</h2>
+
+<div class="card">
+    <h3>📜 Rules</h3>
+    <p>{{ space.rules }}</p>
+</div>
+
+<div class="card">
+    <h3>👥 Members</h3>
+
+    <table style="width:100%;">
+        <tr style="background:#eee;">
+            <th>Username</th>
+            <th>Joined</th>
+            <th>Action</th>
+        </tr>
+
+        {% for member in members %}
+        <tr>
+            <td>{{ member.user.username }}</td>
+            <td>{{ member.joined_at }}</td>
+            <td>
+                <a href="/shared/exit/{{ space.id }}/" class="btn btn-danger">Remove</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div class="card">
+    <h3>➕ Invite User</h3>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Username</label>
+        {{ form.username }}
+
+        <br>
+
+        <button type="submit" class="btn btn-success">Send Invite</button>
+    </form>
+</div>
+
+<div class="card">
+    <a href="/shared/my-spaces/" class="btn btn-primary">Back to My Spaces</a>
+</div>
+
+{% endblock %}

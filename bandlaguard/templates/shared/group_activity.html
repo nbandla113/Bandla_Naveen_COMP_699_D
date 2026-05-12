@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<h2>📊 My Shared Spaces</h2>
+
+<div class="card">
+    <table style="width:100%;">
+        <tr style="background:#eee;">
+            <th>Space Name</th>
+            <th>Owner</th>
+            <th>Joined</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for item in spaces %}
+        <tr>
+            <td>{{ item.space.name }}</td>
+            <td>{{ item.space.owner.username }}</td>
+            <td>{{ item.joined_at }}</td>
+            <td>
+                <a href="/shared/manage/{{ item.space.id }}/" class="btn btn-primary">Manage</a>
+                <a href="/shared/exit/{{ item.space.id }}/" class="btn btn-danger">Exit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+
+    <div class="flex">
+        <a href="/shared/create/" class="btn btn-success">Create New Space</a>
+        <a href="/shared/join/" class="btn btn-warning">Join Space</a>
+        <a href="/dashboard/" class="btn btn-primary">Back</a>
+    </div>
+</div>
+
+{% endblock %}
